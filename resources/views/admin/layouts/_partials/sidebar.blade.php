@@ -54,8 +54,8 @@
                     </a>
                 </li>
 
-                <li class="sidebar-item ">
-                    <a href="#" class="sidebar-link">
+                <li class="sidebar-item @if (request()->routeIs('admin.user.*')) active @endif">
+                    <a href="{{ route('admin.user.index') }}" class="sidebar-link">
                         <i class="fas fa-users"></i>
                         <span>User</span>
                     </a>

@@ -169,6 +169,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Laravolt\Avatar\ServiceProvider::class,
+        Yajra\DataTables\DataTablesServiceProvider::class,
     ])->toArray(),
 
     /*

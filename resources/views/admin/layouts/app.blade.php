@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="{{ url('/mazer/compiled/css/app-dark.css') }}" />
     <link rel="stylesheet" href="{{ url('/mazer/compiled/css/iconly.css') }}" />
     <link rel="stylesheet" href="{{ url('/mazer/extensions/@fortawesome/fontawesome-free/css/all.min.css') }}" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/select/1.7.0/css/select.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.bootstrap5.min.css">
     @stack('styles')
 
 </head>
@@ -175,6 +178,11 @@
     <script src="{{ url('mazer/extensions/jquery/jquery.min.js') }}"></script>
 
     <script src="{{ url('mazer/compiled/js/app.js') }}"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/select/1.7.0/js/dataTables.select.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.bootstrap5.min.js"></script>
     <script>
         //listen aria-label="Delete" button and ask before submit
         var elems = document.querySelectorAll('[aria-label="Delete"]');
