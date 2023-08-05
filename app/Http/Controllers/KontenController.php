@@ -39,14 +39,20 @@ class KontenController extends Controller
                 'banner_image' => SettingHelper::get('banner_image'),
                 'visi_misi_image' => SettingHelper::get('visi_misi_image'),
             ];
-            if ($request->app_logo) {
-                $setting['app_logo'] = $request->file('app_logo')->store('images');
+            if ($request->hasFile('app_logo')) {
+                $setting['app_logo'] = $request->file('app_logo')->store('images',[
+                    'disk' => 'public'
+                ]);
             }
-            if ($request->banner_image) {
-                $setting['banner_image'] = $request->file('banner_image')->store('images');
+            if ($request->hasFile('banner_image')) {
+                $setting['banner_image'] = $request->file('banner_image')->store('images',[
+                    'disk' => 'public'
+                ]);
             }
-            if ($request->visi_misi_image) {
-                $setting['visi_misi_image'] = $request->file('visi_misi_image')->store('images');
+            if ($request->hasFile('visi_misi_image')) {
+                $setting['visi_misi_image'] = $request->file('visi_misi_image')->store('images',[
+                    'disk' => 'public'
+                ]);
             }
 
             foreach ($setting as $key => $value) {

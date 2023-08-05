@@ -45,6 +45,11 @@
                 display: none;
             }
         }
+
+        .img-layanan {
+            object-fit: cover;
+            object-position: center;
+        }
     </style>
 
 </head>
@@ -72,11 +77,11 @@
                     <ul class="navbar-nav ms-auto pt-2 pt-lg-0">
                         <li class="nav-item mx-1" data-anchor="data-anchor"><a class="nav-link fw-medium active"
                                 aria-current="page" href="#home">Home</a></li>
-                                <li class="nav-item mx-1" data-anchor="data-anchor"><a class="nav-link fw-medium"
-                                    href="#profil">Profil</a></li>
+                        <li class="nav-item mx-1" data-anchor="data-anchor"><a class="nav-link fw-medium"
+                                href="#profil">Profil</a></li>
                         <li class="nav-item mx-1" data-anchor="data-anchor"><a class="nav-link fw-medium"
                                 href="#layanan">Layanan</a></li>
-                        
+
                         <li class="nav-item mx-1" data-anchor="data-anchor"><a class="nav-link fw-medium"
                                 href="#visi-misi">Visi & Misi</a></li>
 
@@ -118,7 +123,7 @@
             </div>
         </section>
 
-        
+
 
 
         <!-- ============================================-->
@@ -167,70 +172,45 @@
 
         <!-- ============================================-->
         <!-- <section> begin ============================-->
-            <section class="py-6 mb-4" id="layanan">
+        <section class="py-6 mb-4" id="layanan">
 
+            <div class="container">
                 <div class="container">
-                    <div class="container">
-                        <div class="row align-items-center">
-                            <div class="col-md-6 order-md-1 text-end text-md-end">
-                                <img class="img-fluid rounded mb-4 ms-4" src="{{ url('images/img-3.jpg') }}"
-                                    width="550" alt="" />
+                    <div class="row align-items-center">
+                        <div class="col-md-6 order-md-1 text-end text-md-end">
+                            <img class="img-fluid rounded mb-4 ms-4" src="{{ url('images/img-3.jpg') }}" width="550"
+                                alt="" />
+                        </div>
+                        <div class="col-md-6 text-center text-md-start">
+                            <h6 class="fw-bold fs-4 display-3 lh-sm">Layanan & Jasa</h6>
+                            <p class="my-4 pe-xl-5"> Kami berkomitmen memberikan pelayanan dan jasa berkualitas.</p>
+                            <div class="row">
+                                @foreach ($layanans as $layanan)
+                                    <div class="col-md-6">
+                                        <div class="mb-4">
+                                            <div class="py-4"><img class="img-fluid"
+                                                    src="{{ url($layanan->gambar_layanan) }}"
+                                                    style="width: 90px; height: 90px;display: block;"
+                                                    alt="" /></div>
+                                            <h5 class="fw-bold text-undefined">{{ $layanan->nama_layanan }}</h5>
+                                            <p class="mt-2 mb-0">{{ $layanan->deskripsi_layanan }}</p>
+                                        </div>
+                                    </div>
+                                @endforeach
+
+
                             </div>
-                            <div class="col-md-6 text-center text-md-start">
-                                <h6 class="fw-bold fs-4 display-3 lh-sm">Layanan & Jasa</h6>
-                                <p class="my-4 pe-xl-5"> Kami berkomitmen memberikan pelayanan dan jasa berkualitas.</p>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="mb-4">
-                                            <div class="py-4"><img class="img-fluid"
-                                                    src="assets/img/illustrations/app.png" width="90"
-                                                    alt="" /></div>
-                                            <h5 class="fw-bold text-undefined">App Development</h5>
-                                            <p class="mt-2 mb-0">Get your blood tests delivered at home collect a sample
-                                                from the news your blood tests.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="mb-4">
-                                            <div class="py-4"><img class="img-fluid"
-                                                    src="assets/img/illustrations/ux.png" width="90"
-                                                    alt="" /></div>
-                                            <h5 class="fw-bold text-undefined">UX Planning</h5>
-                                            <p class="mt-2 mb-0">Get your blood tests delivered at home collect a sample
-                                                from the news your blood tests.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="mb-4">
-                                            <div class="py-4"><img class="img-fluid"
-                                                    src="assets/img/illustrations/cloud.png" width="90"
-                                                    alt="" /></div>
-                                            <h5 class="fw-bold text-undefined">Cloud Storage</h5>
-                                            <p class="mt-2 mb-0">Get your blood tests delivered at home collect a sample
-                                                from the news your blood tests.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="mb-4">
-                                            <div class="py-4"><img class="img-fluid"
-                                                    src="assets/img/illustrations/support.png" width="90"
-                                                    alt="" /></div>
-                                            <h5 class="fw-bold text-undefined">Customer support</h5>
-                                            <p class="mt-2 mb-0">Get your blood tests delivered at home collect a sample
-                                                from the news your blood tests.</p>
-                                        </div>
-                                    </div>
-                                </div><a class="btn btn-lg btn-primary rounded-pill hover-top" href="#"
-                                    role="button">See all</a>
-                            </div>
+                            <a class="btn btn-lg btn-primary rounded-pill hover-top" href="#"
+                                role="button">See all</a>
                         </div>
                     </div>
                 </div>
-                <!-- end of .container-->
-    
-            </section>
-            <!-- <section> close ============================-->
-            <!-- ============================================-->
+            </div>
+            <!-- end of .container-->
+
+        </section>
+        <!-- <section> close ============================-->
+        <!-- ============================================-->
 
         <!-- ============================================-->
         <!-- <section> begin ============================-->
@@ -271,8 +251,9 @@
                         <h6 class="fw-bold fs-4 display-3 lh-sm mb-6">Visi & Misi</h6>
 
                         <div class="d-flex align-items-center mb-5">
-                            <div><img class="img-fluid" src="{{ url('assets/img/illustrations/fast-performance.png') }}"
-                                    width="90" alt="" /></div>
+                            <div><img class="img-fluid"
+                                    src="{{ url('assets/img/illustrations/fast-performance.png') }}" width="90"
+                                    alt="" /></div>
                             <div class="px-4">
                                 <h5 class="fw-bold text-danger">Visi</h5>
                                 <p>{{ SettingHelper::get('visi') }}</p>
@@ -796,7 +777,7 @@
         <section class="py-8 bg-1000">
 
             <div class="container">
-                
+
                 <div class="row flex-center">
                     <div class="col-auto mb-5">
                         <ul class="list-unstyled list-inline mb-0">

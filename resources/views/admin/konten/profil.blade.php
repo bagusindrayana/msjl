@@ -24,7 +24,7 @@
 @endsection
 
 @section('content')
-    <form action="{{ route('admin.konten.profil.update') }}" method="POST">
+    <form action="{{ route('admin.konten.profil.update') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="row">
             <div class="col-md-12">

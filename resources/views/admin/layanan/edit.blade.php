@@ -2,19 +2,19 @@
 @section('heading')
     <div class="row">
         <div class="col-12 col-md-6 order-md-1 order-last">
-            <h3>Tambah Data User</h3>
+            <h3>Ubah Data Layanan</h3>
             <p class="text-subtitle text-muted">
-                Tambah data user
+                Ubah data layanan
             </p>
         </div>
         <div class="col-12 col-md-6 order-md-2 order-first">
             <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <a href="{{ route('admin.user.index') }}">User</a>
+                        <a href="{{ route('admin.layanan.index') }}">Layanan</a>
                     </li>
                     <li class="breadcrumb-item active" aria-current="page">
-                        Tambah Data User
+                        Ubah Data Layanan
                     </li>
                 </ol>
             </nav>
@@ -27,18 +27,19 @@
         <section class="section">
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
-                    <h4 class="card-title">Data User</h4>
+                    <h4 class="card-title">Data Layanan</h4>
                     <div class="card-header-action">
-                        <a href="{{ route('admin.user.index') }}" class="btn btn-warning btn-sm"><i class="fas fa-arrow-left"></i> Kembali</a>
+                        <a href="{{ route('admin.layanan.index') }}" class="btn btn-warning btn-sm"><i class="fas fa-arrow-left"></i> Kembali</a>
                     </div>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('admin.user.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('admin.layanan.update',$layanan->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        @include('admin.user._form')
+                        @method('PUT')
+                        @include('admin.layanan._form')
                         <div class="form-group mt-4">
                             <button class="btn btn-primary btn-sm"><i class="fas fa-save"></i> Simpan</button>
-                            <a href="{{ route('admin.user.index') }}" class="btn btn-danger btn-sm"><i class="fas fa-arrow-left"></i> Batal</a>
+                            <a href="{{ route('admin.layanan.index') }}" class="btn btn-danger btn-sm"><i class="fas fa-arrow-left"></i> Batal</a>
                         </div>
                     </form>
                 </div>

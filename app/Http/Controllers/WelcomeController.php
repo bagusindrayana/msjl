@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Layanan;
 use Illuminate\Http\Request;
 
 class WelcomeController extends Controller
 {
     function index() {
-        return view('welcome');
+        $layanans = Layanan::orderBy('created_at','desc')->get();
+        return view('welcome',compact('layanans'));
     }
 }
