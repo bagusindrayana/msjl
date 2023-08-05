@@ -769,7 +769,7 @@
         <!-- ============================================-->
 
 
-        <section class="py-6">
+        {{-- <section class="py-6">
             <hr />
             <div class="container">
                 <div class="row align-items-center">
@@ -788,7 +788,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
 
 
         <!-- ============================================-->
@@ -796,13 +796,7 @@
         <section class="py-8 bg-1000">
 
             <div class="container">
-                <div class="row flex-center">
-                    <div class="col-auto mb-5"><a
-                            class="pe-2 d-flex align-items-center text-decoration-none fw-bold fs-3" href="#">
-                            <div class="text-warning">App</div>
-                            <div class="text-white">Lab</div>
-                        </a></div>
-                </div>
+                
                 <div class="row flex-center">
                     <div class="col-auto mb-5">
                         <ul class="list-unstyled list-inline mb-0">
