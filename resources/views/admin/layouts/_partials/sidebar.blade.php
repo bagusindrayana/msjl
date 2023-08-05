@@ -84,8 +84,8 @@
                 </li>
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link">
-                        <i class="bi bi-file-earmark-medical-fill"></i>
-                        <span>Pengaturan</span>
+                        <i class="fas fa-cog"></i>
+                        <span>Pengaturan Landing Page</span>
                     </a>
                 </li>
                

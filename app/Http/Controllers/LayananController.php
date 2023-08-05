@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\DataTables\LayanansDataTable;
 use App\Models\Layanan;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -78,5 +79,25 @@ class LayananController extends Controller
             DB::rollBack();
             return redirect()->back()->withInput($request->all())->with('error','Gagal menambahkan data : '.$th->getMessage());
         }
+    }
+
+    function destroy($id) {
+        $layanan = Layanan::findOrFail($id);
+        $layanan->delete();
+        return redirect()->route('admin.layanan.index')->with('success','Berhasil menghapus data');
+    }
+
+    public function updateGambar(Request $request) {
+        $request->validate([
+            'layanan_jasa_image' => 'required|image|mimes:jpg,png,jpeg|max:2048',
+        ]);
+        //update setting key layanan_jasa_image
+        $layanan_jasa_image = $request->file('layanan_jasa_image')->store('images/layanan',[
+            'disk' => 'public'
+        ]);
+        Setting::where('key','layanan_jasa_image')->update([
+            'value' => $layanan_jasa_image
+        ]);
+        return redirect()->back()->with('success','Berhasil mengubah gambar');
     }
 }

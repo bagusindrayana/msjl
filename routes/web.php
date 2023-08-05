@@ -34,7 +34,9 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>['auth']],function(
         Route::get('/profil',[KontenController::class,'profil'])->name('profil');
         Route::post('/profil/update',[KontenController::class,'profilUpdate'])->name('profil.update');
     });
+    Route::post('layanan/update-gambar',[LayananController::class,'updateGambar'])->name('layanan.update-gambar');
     Route::resource('layanan',LayananController::class);
+    
 });
 
 Route::get('/migrate', function () {

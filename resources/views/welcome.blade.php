@@ -178,7 +178,7 @@
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-md-6 order-md-1 text-end text-md-end">
-                            <img class="img-fluid rounded mb-4 ms-4" src="{{ url('images/img-3.jpg') }}" width="550"
+                            <img class="img-fluid rounded mb-4 ms-4" src="{{ url(SettingHelper::get('layanan_jasa_image')) }}" width="550"
                                 alt="" />
                         </div>
                         <div class="col-md-6 text-center text-md-start">
@@ -246,7 +246,7 @@
             <div class="container-lg">
                 <div class="row align-items-center">
                     <div class="col-md-6 col-lg-6 order-md-0 text-center text-md-start"><img class="img-fluid rounded"
-                            src="{{ url('images/img-2.jpg') }}" width="550" alt="" /></div>
+                            src="{{ url(SettingHelper::get('visi_misi_image')) }}" width="550" alt="" /></div>
                     <div class="col-md-6 col-lg-6 px-sm-5 px-md-0">
                         <h6 class="fw-bold fs-4 display-3 lh-sm mb-6">Visi & Misi</h6>
 
