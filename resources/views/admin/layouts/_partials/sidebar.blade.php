@@ -61,15 +61,15 @@
                     </a>
                 </li>
 
-                <li class="sidebar-item has-sub ">
-                    <a href="#" class="sidebar-link ">
+                <li class="sidebar-item has-sub @if (request()->routeIs('admin.konten.*')) active @endif">
+                    <a href="#" class="sidebar-link @if (request()->routeIs('admin.konten.*')) active @endif">
                         <i class="bi bi-stack"></i>
                         <span>Konten Web</span>
                     </a>
 
                     <ul class="submenu">
-                        <li class="submenu-item">
-                            <a href="#" class="submenu-link">Profil</a>
+                        <li class="submenu-item @if (request()->routeIs('admin.konten.profil')) active @endif">
+                            <a href="{{ route('admin.konten.profil') }}" class="submenu-link">Profil</a>
                         </li>
 
                         <li class="submenu-item">

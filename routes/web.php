@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\KontenController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -26,4 +27,8 @@ Route::group(['prefix'=>'admin','as'=>'admin.'],function(){
     Route::post('/login',[LoginController::class,'auth'])->name('login.auth');
     Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
     Route::resource('user',UserController::class);
+    Route::group(['prefix'=>'konten','as'=>'konten.'],function(){
+        Route::get('/profil',[KontenController::class,'profil'])->name('profil');
+        Route::post('/profil/update',[KontenController::class,'profilUpdate'])->name('profil.update');
+    });
 });

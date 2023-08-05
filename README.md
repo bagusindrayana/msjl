@@ -19,3 +19,22 @@
 - isi konfigurasi database pada file `.env`
 - jalankan perintah `php artisan key:generate`
 - jalankan perintah `php artisan migrate --seed`
+- jalankan perintah `php artisan serve`
+
+## Todo 
+- [x] Desain Landing Page
+- [x] Desain Admin
+- Company Profile
+  - [x] Manajemen User
+  - [x] Konten Profil
+  - [ ] Konten Layanan & Jasa
+  - [ ] Konten Kontak
+  - [ ] Pengaturan
+- Invoice
+  - [ ] Manajemen Customer
+  - [ ] Manajemen Invoice
+  - [ ] Laporan Invoice
+- Surat
+  - [ ] Manajemen Jenis Surat
+  - [ ] Manajemen Surat
+  - [ ] Laporan Surat

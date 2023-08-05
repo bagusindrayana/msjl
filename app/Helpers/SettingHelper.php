@@ -13,6 +13,9 @@ class SettingHelper {
             'profile_description' => 'Quisque eget sapien est. Etiam tincidunt dignissim urna a rutrum. Nunc metus risus, tincidunt id orci vitae, porta sodales risus. Vivamus congue nulla a orci pharetra aliquet. Donec nec pulvinar justo. Ut et lorem eu metus eleifend accumsan. Sed ornare erat ultricies nisl commodo congue. Donec id feugiat sem. Ut pulvinar eros sapien. Fusce feugiat eget est vitae mattis. Proin sit amet tincidunt metus. Vestibulum leo leo, porttitor a facilisis et, placerat at diam. Nulla faucibus malesuada odio, et molestie justo vulputate non. Quisque et tortor sit amet tortor vulputate sagittis quis vel eros.',
             'visi'=>"Aenean pellentesque ligula ut sapien condimentum pulvinar. Morbi in posuere sapien. Morbi non sagittis nulla. Nunc sodales neque vitae neque accumsan, id pulvinar lacus pulvinar. Integer consequat ante et enim ornare sodales. Fusce placerat vel nunc quis egestas. Sed lobortis ac ante in faucibus. ",
             'misi'=>"Sed posuere sapien ullamcorper, dictum ex id, dignissim odio. Proin faucibus pharetra cursus. Vivamus nisi neque, mattis a mi nec, congue tincidunt mi. Sed scelerisque ac nunc luctus gravida. Suspendisse malesuada iaculis porta.",
+            'banner_image' => '/images/img-1.png',
+            'visi_misi_image' => '/images/img-2.jpg',
+            'layanan_jasa_image' => '/images/img-3.jpg',
             'gambar_struktur_organisasi'=>null
         ];
         return $setting;
