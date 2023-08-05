@@ -33,5 +33,9 @@ Route::group(['prefix'=>'admin','as'=>'admin.'],function(){
 });
 
 Route::get('/migrate', function () {
-    Artisan::call('migrate');
+    dd(Artisan::call('migrate'));
+});
+
+Route::get('/db-seed', function () {
+    dd(Artisan::call('db:seed'));
 });
