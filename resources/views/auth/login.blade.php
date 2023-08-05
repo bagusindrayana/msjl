@@ -35,7 +35,7 @@
                     </div>
                     <h1 class="auth-title">Log in.</h1>
                     <p class="auth-subtitle mb-5">
-                        Log in with your data that you entered during registration.
+                        Log in with account.
                     </p>
 
                     <form action="{{ route('admin.login.auth') }}" method="POST">

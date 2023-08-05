@@ -6,6 +6,7 @@ use App\Http\Controllers\LayananController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WelcomeController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,7 +27,7 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>['guest']],function
     Route::post('/login',[LoginController::class,'auth'])->name('login.auth');
 });
 Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>['auth']],function(){
-    
+    Route::post('logout',[DashboardController::class,'logout'])->name('logout');
     Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
     Route::resource('user',UserController::class);
     Route::group(['prefix'=>'konten','as'=>'konten.'],function(){

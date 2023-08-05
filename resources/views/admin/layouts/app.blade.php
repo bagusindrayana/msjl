@@ -142,9 +142,12 @@
                                         <hr class="dropdown-divider" />
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="#"><i
+                                        <a class="dropdown-item" href="#" onclick="document.getElementById('logout-form').submit()"><i
                                                 class="icon-mid bi bi-box-arrow-left me-2"></i>
                                             Logout</a>
+                                            <form action="{{ route('admin.logout') }}" id="logout-form" method="POST">
+                                                @csrf
+                                            </form>
                                     </li>
                                 </ul>
                             </div>
