@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\KontenController;
 use App\Http\Controllers\LayananController;
 use App\Http\Controllers\LoginController;
@@ -36,7 +38,8 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>['auth']],function(
     });
     Route::post('layanan/update-gambar',[LayananController::class,'updateGambar'])->name('layanan.update-gambar');
     Route::resource('layanan',LayananController::class);
-    
+    Route::resource('customer',CustomerController::class);
+    Route::resource('invoice',InvoiceController::class);
 });
 
 Route::get('/migrate', function () {

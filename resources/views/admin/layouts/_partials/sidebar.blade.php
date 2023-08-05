@@ -88,6 +88,23 @@
                         <span>Pengaturan Landing Page</span>
                     </a>
                 </li>
+
+                <li class="sidebar-item has-sub @if (request()->routeIs('admin.invoice.*') || request()->routeIs('admin.customer.*')) active @endif">
+                    <a href="#" class="sidebar-link @if (request()->routeIs('admin.invoice.*') || request()->routeIs('admin.customer.*')) active @endif">
+                        <i class="fas fa-file"></i>
+                        <span>Invoice</span>
+                    </a>
+
+                    <ul class="submenu">
+                        <li class="submenu-item @if (request()->routeIs('admin.customer.index')) active @endif">
+                            <a href="{{ route('admin.customer.index') }}" class="submenu-link">Data Customer</a>
+                        </li>
+
+                        <li class="submenu-item @if (request()->routeIs('admin.invoice.index')) active @endif">
+                            <a href="{{ route('admin.invoice.index') }}" class="submenu-link">Data Invoice</a>
+                        </li>
+                    </ul>
+                </li>
                
             </ul>
         </div>
