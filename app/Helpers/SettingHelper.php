@@ -16,7 +16,8 @@ class SettingHelper {
             'banner_image' => '/images/img-1.png',
             'visi_misi_image' => '/images/img-2.jpg',
             'layanan_jasa_image' => '/images/img-3.jpg',
-            'gambar_struktur_organisasi'=>null
+            'gambar_struktur_organisasi'=>null,
+            'alamat'=>null
         ];
         return $setting;
     }

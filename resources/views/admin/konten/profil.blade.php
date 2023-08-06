@@ -174,6 +174,17 @@
 
                             <div class="row">
                                 <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="alamat">Alamat <small class="text-danger">*</small></label>
+                                        <textarea name="alamat" id="alamat" cols="30" rows="7" required class="form-control" placeholder="Alamat...">{{ old('alamat', @$setting->alamat) }}</textarea>
+                                        @error('alamat')
+                                            <span class="text-xs text-danger">
+                                                {{ $message }}
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
                                     <label for="">Gambar Visi & Misi <small class="text-danger">*</small></label>
                                     <br>
                                     <small>Upload gambar PNG/JPEG maksimal 2MB</small>

@@ -88,8 +88,8 @@
                         <li class="nav-item mx-1" data-anchor="data-anchor"><a class="nav-link fw-medium"
                                 href="#struktur">Struktur Organisasi</a></li>
 
-                        <li class="nav-item mx-1" data-anchor="data-anchor"><a class="nav-link fw-medium"
-                                href="#kontak">Kontak</a></li>
+                        {{-- <li class="nav-item mx-1" data-anchor="data-anchor"><a class="nav-link fw-medium"
+                                href="#kontak">Kontak</a></li> --}}
 
                     </ul>
                     {{-- <form class="ps-lg-5">
@@ -305,7 +305,7 @@
 
         <!-- ============================================-->
         <!-- <section> begin ============================-->
-        <section class="py-6">
+        {{-- <section class="py-6">
 
             <div class="container">
                 <div class="row justify-content-center mb-6">
@@ -368,7 +368,7 @@
             </div>
             <!-- end of .container-->
 
-        </section>
+        </section> --}}
         <!-- <section> close ============================-->
         <!-- ============================================-->
 
@@ -382,7 +382,7 @@
 
         <!-- ============================================-->
         <!-- <section> begin ============================-->
-        <section class="py-8" id="pricing">
+        {{-- <section class="py-8" id="pricing">
 
             <div class="container">
                 <div class="row justify-content-center">
@@ -449,7 +449,7 @@
             </div>
             <!-- end of .container-->
 
-        </section>
+        </section> --}}
         <!-- <section> close ============================-->
         <!-- ============================================-->
 
@@ -778,8 +778,8 @@
 
             <div class="container">
 
-                <div class="row flex-center">
-                    <div class="col-auto mb-5">
+                <div class="row" style="margin-bottom: 50px;">
+                    {{-- <div class="col-auto mb-5">
                         <ul class="list-unstyled list-inline mb-0">
                             <li class="list-inline-item me3 me-sm-4"><a class="text-light text-decoration-none"
                                     href="#!">Home</a></li>
@@ -792,9 +792,29 @@
                             <li class="list-inline-item me3 me-sm-4"><a class="text-light text-decoration-none"
                                     href="#!">FAQ</a></li>
                         </ul>
+                    </div> --}}
+                    <div class="col-md-4">
+                        <img src="{{ url(SettingHelper::get('app_logo')) }}" alt="" width="75">
+                        <span class="brand-title text-light">
+                            {{ SettingHelper::get('app_name') }}
+                        </span>
+                    </div>
+                    <div class="col-md-4">
+                        <h3 class="text-light" style="margin-bottom: 20px;">Alamat</h3>
+                        <p class="text-light" >
+                            {{ SettingHelper::get('alamat') }}
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                        <h3 class="text-light" style="margin-bottom: 20px;">Kontak</h3>
+                        <ul>
+                            @foreach ($kontaks as $kontak)
+                                <li class="text-light">{{ $kontak->tipe }} : {{ $kontak->kontak }}</li>
+                            @endforeach
+                        </ul>
                     </div>
                 </div>
-                <div class="row flex-center">
+                {{-- <div class="row flex-center">
                     <div class="col-auto mb-5">
                         <ul class="list-unstyled list-inline">
                             <li class="list-inline-item me-3"><a class="text-decoration-none" href="#!">
@@ -827,17 +847,10 @@
                                     </svg></a></li>
                         </ul>
                     </div>
-                </div>
+                </div> --}}
                 <div class="row flex-center">
                     <div class="col-auto">
-                        <p class="mb-0 fs--1 text-700">&copy; This template is made with&nbsp;
-                            <svg class="bi bi-suit-heart-fill" xmlns="http://www.w3.org/2000/svg" width="16"
-                                height="16" fill="#ffffff" viewBox="0 0 16 16">
-                                <path
-                                    d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z">
-                                </path>
-                            </svg>&nbsp;by&nbsp;<a class="text-700" href="https://themewagon.com/"
-                                target="_blank">ThemeWagon </a>
+                        <p class="mb-0 fs--1 text-700">&copy; {{ SettingHelper::get('app_name') }}
                         </p>
                     </div>
                 </div>

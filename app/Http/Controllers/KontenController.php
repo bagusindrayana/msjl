@@ -38,6 +38,7 @@ class KontenController extends Controller
                 'app_logo' => SettingHelper::get('app_logo'),
                 'banner_image' => SettingHelper::get('banner_image'),
                 'visi_misi_image' => SettingHelper::get('visi_misi_image'),
+                'alamat' => $request->alamat,
             ];
             if ($request->hasFile('app_logo')) {
                 $setting['app_logo'] = $request->file('app_logo')->store('images',[

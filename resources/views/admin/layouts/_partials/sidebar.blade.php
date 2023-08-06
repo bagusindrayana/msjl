@@ -61,8 +61,8 @@
                     </a>
                 </li>
 
-                <li class="sidebar-item has-sub @if (request()->routeIs('admin.konten.*') || request()->routeIs('admin.layanan.*')) active @endif">
-                    <a href="#" class="sidebar-link @if (request()->routeIs('admin.konten.*') || request()->routeIs('admin.layanan.*')) active @endif">
+                <li class="sidebar-item has-sub @if (request()->routeIs('admin.konten.*') || request()->routeIs('admin.layanan.*') || request()->routeIs('admin.kontak.*')) active @endif">
+                    <a href="#" class="sidebar-link @if (request()->routeIs('admin.konten.*') || request()->routeIs('admin.layanan.*') || request()->routeIs('admin.kontak.*')) active @endif">
                         <i class="bi bi-stack"></i>
                         <span>Konten Web</span>
                     </a>
@@ -76,8 +76,8 @@
                             <a href="{{ route('admin.layanan.index') }}" class="submenu-link">Layanan & Jasa</a>
                         </li>
 
-                        <li class="submenu-item">
-                            <a href="#" class="submenu-link">Kontak</a>
+                        <li class="submenu-item @if (request()->routeIs('admin.kontak.index')) active @endif">
+                            <a href="{{ route('admin.kontak.index') }}" class="submenu-link">Kontak</a>
                         </li>
 
                     </ul>
