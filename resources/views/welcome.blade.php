@@ -88,8 +88,8 @@
                         <li class="nav-item mx-1" data-anchor="data-anchor"><a class="nav-link fw-medium"
                                 href="#struktur">Struktur Organisasi</a></li>
 
-                        {{-- <li class="nav-item mx-1" data-anchor="data-anchor"><a class="nav-link fw-medium"
-                                href="#kontak">Kontak</a></li> --}}
+                        <li class="nav-item mx-1" data-anchor="data-anchor"><a class="nav-link fw-medium"
+                                href="#kontak">Kontak</a></li>
 
                     </ul>
                     {{-- <form class="ps-lg-5">
@@ -645,7 +645,7 @@
 
         <!-- ============================================-->
         <!-- <section> begin ============================-->
-        <section class="py-8" id="faq">
+        {{-- <section class="py-8" id="faq">
 
             <div class="container">
                 <div class="row justify-content-center">
@@ -745,9 +745,32 @@
             </div>
             <!-- end of .container-->
 
-        </section>
+        </section> --}}
         <!-- <section> close ============================-->
         <!-- ============================================-->
+
+        <section class="py-8" id="kontak">
+
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6 text-center mb-3">
+                        <h6 class="fw-bold fs-4 display-3 lh-sm mb-3">Kontak</h6>
+                        <p class="mb-5">Silahkan hubungi nomor dan alamat kontak berikut</p>
+                    </div>
+                </div>
+                <div class="row flex-center">
+                    <div class="col-lg-4 col-md-8">
+                        <ul>
+                            @foreach ($kontaks as $kontak)
+                                <li>{{ $kontak->tipe }} : {{ $kontak->kontak }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- end of .container-->
+
+        </section>
 
 
         {{-- <section class="py-6">
