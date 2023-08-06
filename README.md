@@ -27,11 +27,11 @@
 - Company Profile
   - [x] Manajemen User
   - [x] Konten Profil
-  - [ ] Konten Layanan & Jasa
-  - [ ] Konten Kontak
+  - [x] Konten Layanan & Jasa
+  - [x] Konten Kontak
   - [ ] Pengaturan
 - Invoice
-  - [ ] Manajemen Customer
+  - [x] Manajemen Customer
   - [ ] Manajemen Invoice
   - [ ] Laporan Invoice
 - Surat
