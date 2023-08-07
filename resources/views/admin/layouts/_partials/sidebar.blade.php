@@ -54,12 +54,14 @@
                     </a>
                 </li>
 
-                <li class="sidebar-item @if (request()->routeIs('admin.user.*')) active @endif">
-                    <a href="{{ route('admin.user.index') }}" class="sidebar-link">
-                        <i class="fas fa-users"></i>
-                        <span>User</span>
-                    </a>
-                </li>
+                @if (auth()->user()->role == "admin")
+                    <li class="sidebar-item @if (request()->routeIs('admin.user.*')) active @endif">
+                        <a href="{{ route('admin.user.index') }}" class="sidebar-link">
+                            <i class="fas fa-users"></i>
+                            <span>User</span>
+                        </a>
+                    </li>
+                @endif
 
                 <li class="sidebar-item has-sub @if (request()->routeIs('admin.konten.*') || request()->routeIs('admin.layanan.*') || request()->routeIs('admin.kontak.*')) active @endif">
                     <a href="#" class="sidebar-link @if (request()->routeIs('admin.konten.*') || request()->routeIs('admin.layanan.*') || request()->routeIs('admin.kontak.*')) active @endif">
