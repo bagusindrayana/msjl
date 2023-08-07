@@ -51,3 +51,7 @@ Route::get('/migrate', function () {
 Route::get('/db-seed', function () {
     dd(Artisan::call('db:seed'));
 });
+
+Route::get('/storage-link', function () {
+    dd(Artisan::call('storage:link'));
+});
