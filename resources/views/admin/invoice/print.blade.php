@@ -55,7 +55,7 @@
                         <img src="{{ url(SettingHelper::get('app_logo')) }}" alt="" width="150">
                     </th>
                     <th>
-                        <h2 style="color:red;margin:0px;">{{ SettingHelper::get('app_name') }}</h2>
+                        <h1 style="color:red;margin:0px;">{{ SettingHelper::get('app_name') }}</h1>
                         <span><b>STEVEDOORING, CARGODOORING, RECEIVING AND DELIVERY</b></span>
 
                     </th>
@@ -196,7 +196,7 @@
                 No. 148-00-0316013-5
             </td>
             <td style="text-align: center;">
-                <u>...............</u>
+                <u>Mahmudin,SE</u>
             </td>
         </tr>
         </tbody>
