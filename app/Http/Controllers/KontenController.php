@@ -93,13 +93,7 @@ class KontenController extends Controller
             'struktur_organisasi' => 'required',
             
         ]);
-        $json = $request->struktur_organisasi;
-        
-        //check if valid json and remove all html tag
-        $json = filter_var($json, FILTER_SANITIZE_STRING);
-
-        //check if valid json
-        
+        $json = $request->struktur_organisasi;    
 
         DB::beginTransaction();
         try {
@@ -110,7 +104,7 @@ class KontenController extends Controller
             Setting::updateOrCreate([
                 'key' => "struktur_organisasi"
             ],[
-                'value' => $json
+                'value' => $request->struktur_organisasi
             ]);
 
             DB::commit();
