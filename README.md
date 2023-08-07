@@ -32,9 +32,7 @@
   - [ ] Pengaturan
 - Invoice
   - [x] Manajemen Customer
-  - [ ] Manajemen Invoice
-  - [ ] Laporan Invoice
+  - [x] Manajemen Invoice
 - Surat
   - [ ] Manajemen Jenis Surat
   - [ ] Manajemen Surat
-  - [ ] Laporan Surat
