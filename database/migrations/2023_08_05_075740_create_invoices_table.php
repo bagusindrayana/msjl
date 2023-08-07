@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('invoices', function (Blueprint $table) {
             $table->id();
-            $table->string('nomor_invoice',20)->unique();
+            $table->string('nomor_invoice',30)->unique();
             $table->unsignedBigInteger('customer_id')->index();
             $table->date('tanggal_invoice');
-            $table->date('jumlah_invoice');
+            $table->integer('jumlah_invoice',false)->default(0);
             $table->unsignedBigInteger('user_id')->index();
             $table->text('keterangan_invoice')->nullable();
             $table->string('file_invoice')->nullable();

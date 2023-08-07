@@ -41,7 +41,7 @@
                         </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav ms-auto mb-lg-0">
-                                <li class="nav-item dropdown me-1">
+                                {{-- <li class="nav-item dropdown me-1">
                                     <a class="nav-link active dropdown-toggle text-gray-600" href="#"
                                         data-bs-toggle="dropdown" aria-expanded="false">
                                         <i class="bi bi-envelope bi-sub fs-4"></i>
@@ -65,23 +65,7 @@
                                         <li class="dropdown-header">
                                             <h6>Notifications</h6>
                                         </li>
-                                        {{-- @foreach (VerifikasiHelper::getPesertaPending() as $item)
-                                            <li class="dropdown-item notification-item">
-                                                <a class="d-flex align-items-center" href="#">
-                                                    <div class="notification-icon bg-primary">
-                                                        <i class="fas fa-warning"></i>
-                                                    </div>
-                                                    <div class="notification-text ms-4">
-                                                        <p class="notification-title font-bold">
-                                                            {{ $item->peserta->nama }}
-                                                        </p>
-                                                        <p class="notification-subtitle font-thin text-sm">
-                                                            {{ $item->kegiatan->nama_kegiatan }}
-                                                        </p>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                        @endforeach --}}
+
 
                                         <li class="dropdown-item notification-item">
                                             <a class="d-flex align-items-center" href="#">
@@ -104,7 +88,7 @@
                                             </p>
                                         </li>
                                     </ul>
-                                </li>
+                                </li> --}}
                             </ul>
                             <div class="dropdown">
                                 <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
@@ -123,9 +107,9 @@
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton"
                                     style="min-width: 11rem">
                                     <li>
-                                        <h6 class="dropdown-header">Hello, John!</h6>
+                                        <h6 class="dropdown-header">Hello, {{ Auth::user()->nama }}!</h6>
                                     </li>
-                                    <li>
+                                    {{-- <li>
                                         <a class="dropdown-item" href="#"><i
                                                 class="icon-mid bi bi-person me-2"></i> My
                                             Profile</a>
@@ -140,7 +124,7 @@
                                     </li>
                                     <li>
                                         <hr class="dropdown-divider" />
-                                    </li>
+                                    </li> --}}
                                     <li>
                                         <a class="dropdown-item" href="#" onclick="document.getElementById('logout-form').submit()"><i
                                                 class="icon-mid bi bi-box-arrow-left me-2"></i>

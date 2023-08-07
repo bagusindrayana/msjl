@@ -37,11 +37,17 @@
                     <p class="auth-subtitle mb-5">
                         Log in with account.
                     </p>
+                    @if (session('error'))
+                        <div class="alert alert-danger">
+                            {{ session('error') }}
+                        </div>
+                    @endif
 
                     <form action="{{ route('admin.login.auth') }}" method="POST">
                         @csrf
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="text" class="form-control form-control-xl" name="username" required value="{{ old('username') }}" placeholder="Username" />
+                            <input type="text" class="form-control form-control-xl" name="username" required
+                                value="{{ old('username') }}" placeholder="Username" />
                             <div class="form-control-icon">
                                 <i class="bi bi-person"></i>
                             </div>
@@ -50,7 +56,8 @@
                             @enderror
                         </div>
                         <div class="form-group position-relative has-icon-left mb-4">
-                            <input type="password" name="password" class="form-control form-control-xl" placeholder="Password" required />
+                            <input type="password" name="password" class="form-control form-control-xl"
+                                placeholder="Password" required />
                             <div class="form-control-icon">
                                 <i class="bi bi-shield-lock"></i>
                             </div>
@@ -59,7 +66,8 @@
                             @enderror
                         </div>
                         <div class="form-check form-check-lg d-flex align-items-end">
-                            <input class="form-check-input me-2" type="checkbox" name="remember_me" value="" id="flexCheckDefault" />
+                            <input class="form-check-input me-2" type="checkbox" name="remember_me" value=""
+                                id="flexCheckDefault" />
                             <label class="form-check-label text-gray-600" for="flexCheckDefault">
                                 Keep me logged in
                             </label>
@@ -68,7 +76,7 @@
                             Log in
                         </button>
                     </form>
-                    
+
                 </div>
             </div>
             <div class="col-lg-7 d-none d-lg-block">
