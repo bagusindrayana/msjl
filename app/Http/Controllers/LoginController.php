@@ -22,7 +22,7 @@ class LoginController extends Controller
         if(Auth::attempt(['username'=>$username,'password'=>$password],$request->remember_me)) {
             return redirect()->route('admin.dashboard');
         } else {
-            return redirect()->route('login')->with('error','Username atau password salah');
+            return redirect()->route('admin.login')->with('error','Username atau password salah');
         }
         
     }
