@@ -20,3 +20,4 @@ yarn-error.log
 *.zip
 /public/images/layanan
 /public/invoice
+/public/surat-inaportnet
