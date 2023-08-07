@@ -110,7 +110,10 @@ class SuratInaportnetController extends Controller
 
             $file_lampiran = null;
             if($request->has('file_lampiran')){
-                $file_lampiran = $request->file('file_lampiran')->store('surat-inaportnet',[
+                $originalName = $request->file('file_lampiran')->getClientOriginalName();
+                $ext = $request->file('file_lampiran')->getClientOriginalExtension();
+                $slugName = \Str::slug(str_replace($ext,'',$originalName),'-').'-'.time().'.'.$ext;
+                $file_lampiran = $request->file('file_lampiran')->storeAs('surat-inaportnet', $slugName,[
                     'disk'=>'public'
                 ]);
             }

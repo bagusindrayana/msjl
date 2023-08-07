@@ -96,7 +96,10 @@ class InvoiceController extends Controller
             }
             $file_invoice = null;
             if ($request->hasFile('file_invoice')) {
-                $file_invoice = $request->file('file_invoice')->store('invoice',[
+                $originalName = $request->file('file_invoice')->getClientOriginalName();
+                $ext = $request->file('file_invoice')->getClientOriginalExtension();
+                $slugName = \Str::slug(str_replace($ext,'',$originalName),'-').'-'.time().'.'.$ext;
+                $file_invoice = $request->file('file_invoice')->storeAs('invoice',$slugName,[
                     'disk' => 'public'
                 ]);
             }
@@ -165,7 +168,10 @@ class InvoiceController extends Controller
         try {
             $file_invoice = null;
             if ($request->hasFile('file_invoice')) {
-                $file_invoice = $request->file('file_invoice')->store('invoice',[
+                $originalName = $request->file('file_invoice')->getClientOriginalName();
+                $ext = $request->file('file_invoice')->getClientOriginalExtension();
+                $slugName = \Str::slug(str_replace($ext,'',$originalName),'-').'-'.time().'.'.$ext;
+                $file_invoice = $request->file('file_invoice')->storeAs('invoice',$slugName,[
                     'disk' => 'public'
                 ]);
             }
