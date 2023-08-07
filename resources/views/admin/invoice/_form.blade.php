@@ -28,10 +28,10 @@
         </div>
 
         <div class="form-group">
-            <label for="file_invoice">File Lampiran</label>
-            <input class="form-control" type="file" name="file_invoice" accept="images/*,application/pdf" />
+            <label for="file_invoice">File Lampiran (PDF/Gambar, ukuran maks 5 MB)</label>
+            <input class="form-control" type="file" name="file_invoice" accept="image/*,application/pdf" />
             @if (isset($invoice) && $invoice->file_invoice)
-                <a href="{{ asset('storage/' . $invoice->file_invoice) }}"
+                <a href="{{ asset($invoice->file_invoice) }}"
                     target="_blank">{{ basename($invoice->file_invoice) }}</a>
             @endif
             @error('file_invoice')
@@ -58,7 +58,7 @@
 </div>
 
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12 table-responsive">
         @error('deskripsi_detail')
             <span class="text-xs text-danger">
                 {{ $message }}

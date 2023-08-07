@@ -7,6 +7,7 @@ use App\Http\Controllers\KontakController;
 use App\Http\Controllers\KontenController;
 use App\Http\Controllers\LayananController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\SuratInaportnetController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Artisan;
@@ -42,6 +43,7 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>['auth']],function(
     Route::resource('kontak',KontakController::class);
     Route::resource('customer',CustomerController::class);
     Route::resource('invoice',InvoiceController::class);
+    Route::resource('surat-inaportnet',SuratInaportnetController::class);
 });
 
 Route::get('/migrate', function () {

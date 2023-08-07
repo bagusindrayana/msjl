@@ -88,11 +88,11 @@ class InvoiceController extends Controller
         ]);
         DB::beginTransaction();
         try {
-            $no = "001/MSJL-INV/SMD/".$this->bulanRomawi(date('m'))."/".date('Y');
+            $no = "001/MSJL-INV/SMD/".$this->bulanRomawi(date('m',strtotime($request->tanggal_invoice)))."/".date('Y',strtotime($request->tanggal_invoice));
             $lastInvoice = Invoice::latest()->first();
             if ($lastInvoice) {
                 $lastNo = explode('/',$lastInvoice->nomor_invoice);
-                $no = sprintf("%03d", $lastNo[0]+1)."/MSJL-INV/SMD/".$this->bulanRomawi(date('m'))."/".date('Y');
+                $no = sprintf("%03d", $lastNo[0]+1)."/MSJL-INV/SMD/".$this->bulanRomawi(date('m',strtotime($request->tanggal_invoice)))."/".date('Y',strtotime($request->tanggal_invoice));
             }
             $file_invoice = null;
             if ($request->hasFile('file_invoice')) {
@@ -171,7 +171,7 @@ class InvoiceController extends Controller
             }
             $no = $invoice->nomor_invoice;
             $lastNo = explode('/',$no);
-            $no = $lastNo[0]."/MSJL-INV/SMD/".$this->bulanRomawi(date('m'))."/".date('Y');
+            $no = $lastNo[0]."/MSJL-INV/SMD/".$this->bulanRomawi(date('m',strtotime($request->tanggal_invoice)))."/".date('Y',strtotime($request->tanggal_invoice));
             $invoice->update([
                 'customer_id' => $request->customer_id,
                 'user_id' => auth()->user()->id,

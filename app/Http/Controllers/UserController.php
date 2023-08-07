@@ -21,8 +21,8 @@ class UserController extends Controller
     function store(Request $request) {
         $request->validate([
             'nama' => 'required',
-            'username' => 'required|min:5:max:20|unique:users',
-            'password' => 'required|min:5|max:50',
+            'username' => 'required|min:5|max:20|unique:users',
+            'password' => 'required|min:6|max:50',
             'role' => 'required'
         ]);
 
@@ -51,8 +51,8 @@ class UserController extends Controller
     function update($id, Request $request) {
         $request->validate([
             'nama' => 'required',
-            'username' => 'required|min:5:max:20|unique:users,username,'.$id,
-            'password' => 'nullable|min:5|max:50',
+            'username' => 'required|min:5|max:20|unique:users,username,'.$id,
+            'password' => 'nullable|min:6|max:50',
             'role' => 'required'
         ]);
 

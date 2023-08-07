@@ -105,6 +105,21 @@
                         </li>
                     </ul>
                 </li>
+
+                <li class="sidebar-item has-sub @if (request()->routeIs('admin.surat-inaportnet.*')) active @endif">
+                    <a href="#" class="sidebar-link @if (request()->routeIs('admin.surat-inaportnet.*')) active @endif">
+                        <i class="fas fa-envelope"></i>
+                        <span>Surat</span>
+                    </a>
+
+                    <ul class="submenu">
+                        <li class="submenu-item @if (request()->routeIs('admin.surat-inaportnet.index')) active @endif">
+                            <a href="{{ route('admin.surat-inaportnet.index') }}" class="submenu-link">Permohonan Inaportnet</a>
+                        </li>
+
+                       
+                    </ul>
+                </li>
                
             </ul>
         </div>

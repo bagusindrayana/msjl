@@ -39,7 +39,7 @@
         <div class="form-group">
             <label for="username">Password <small class="text-danger">*</small></label>
             <input class="form-control" placeholder="Passwrod..." type="password" name="password"
-                autocomplete="false" aria-autocomplete="false" required minlength="20" maxlength="50" />
+                autocomplete="false" aria-autocomplete="false" required minlength="6" maxlength="50" />
             @error('password')
                 <span class="text-xs text-danger">
                     {{ $message }}
