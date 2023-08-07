@@ -1,4 +1,9 @@
 <div class="d-flex">
+    <a href="{{ route('admin.invoice.show', $data->id) }}" target="_blank"
+        class="btn btn-info btn-sm m-1"
+        aria-label="Print">
+        <i class="fas fa-file"></i>
+    </a>
     <a href="{{ route('admin.invoice.edit', $data->id) }}"
         class="btn btn-warning btn-sm m-1"
         aria-label="Edit">

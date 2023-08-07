@@ -137,7 +137,7 @@ class InvoiceController extends Controller
      */
     public function show(Invoice $invoice)
     {
-        //
+        return view('admin.invoice.print',compact('invoice'));
     }
 
     /**
