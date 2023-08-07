@@ -81,15 +81,18 @@
                         <li class="submenu-item @if (request()->routeIs('admin.kontak.index')) active @endif">
                             <a href="{{ route('admin.kontak.index') }}" class="submenu-link">Kontak</a>
                         </li>
+                        <li class="submenu-item @if (request()->routeIs('admin.konten.struktur-organisasi')) active @endif">
+                            <a href="{{ route('admin.konten.struktur-organisasi') }}" class="submenu-link">Struktur Organisasi</a>
+                        </li>
 
                     </ul>
                 </li>
-                <li class="sidebar-item">
+                {{-- <li class="sidebar-item">
                     <a href="#" class="sidebar-link">
                         <i class="fas fa-cog"></i>
                         <span>Pengaturan Landing Page</span>
                     </a>
-                </li>
+                </li> --}}
 
                 <li class="sidebar-item has-sub @if (request()->routeIs('admin.invoice.*') || request()->routeIs('admin.customer.*')) active @endif">
                     <a href="#" class="sidebar-link @if (request()->routeIs('admin.invoice.*') || request()->routeIs('admin.customer.*')) active @endif">

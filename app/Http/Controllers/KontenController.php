@@ -72,4 +72,53 @@ class KontenController extends Controller
             return redirect()->back()->withInput($request->all())->with('error','Gagal mengubah data');
         }
     }
+
+    function strukturOrganisasi() {
+        $strukturJson = SettingHelper::get('struktur_organisasi');
+        if($strukturJson == null){
+            $strukturJson = '{ 
+                "class": "go.TreeModel",
+                "nodeDataArray": [
+                    {"key":1, "name":"Mahmudin,SE", "title":"CEO"},
+                    {"key":2, "name":"Lutfi", "title":"Programmer", "parent":1},
+                    {"key":3, "name":"Akmal", "title":"UI/UX Desain", "parent":1}
+                ]
+            }';
+        }
+        return view('admin.konten.struktur-organisasi',compact('strukturJson'));
+    }
+
+    function strukturOrganisasiUpdate(Request $request) {
+        $request->validate([
+            'struktur_organisasi' => 'required',
+            
+        ]);
+        $json = $request->struktur_organisasi;
+        
+        //check if valid json and remove all html tag
+        $json = filter_var($json, FILTER_SANITIZE_STRING);
+
+        //check if valid json
+        
+
+        DB::beginTransaction();
+        try {
+            $json = json_decode($json);
+            if($json == null){
+                return redirect()->back()->withInput($request->all())->with('error','Gagal mengubah data, pastikan struktur organisasi berupa json');
+            }
+            Setting::updateOrCreate([
+                'key' => "struktur_organisasi"
+            ],[
+                'value' => $json
+            ]);
+
+            DB::commit();
+            return redirect()->back()->with('success','Berhasil mengubah data');
+        } catch (\Throwable $th) {
+            //throw $th;
+            DB::rollBack();
+            return redirect()->back()->withInput($request->all())->with('error','Gagal mengubah data');
+        }
+    }
 }

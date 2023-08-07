@@ -37,6 +37,9 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>['auth']],function(
     Route::group(['prefix'=>'konten','as'=>'konten.'],function(){
         Route::get('/profil',[KontenController::class,'profil'])->name('profil');
         Route::post('/profil/update',[KontenController::class,'profilUpdate'])->name('profil.update');
+
+        Route::get('/struktur-organisasi',[KontenController::class,'strukturOrganisasi'])->name('struktur-organisasi');
+        Route::post('/struktur-organisasi/update',[KontenController::class,'strukturOrganisasiUpdate'])->name('struktur-organisasi.update');
     });
     Route::post('layanan/update-gambar',[LayananController::class,'updateGambar'])->name('layanan.update-gambar');
     Route::resource('layanan',LayananController::class);
@@ -44,6 +47,7 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>['auth']],function(
     Route::resource('customer',CustomerController::class);
     Route::resource('invoice',InvoiceController::class);
     Route::resource('surat-inaportnet',SuratInaportnetController::class);
+    
 });
 
 Route::get('/migrate', function () {

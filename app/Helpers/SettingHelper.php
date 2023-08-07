@@ -17,7 +17,15 @@ class SettingHelper {
             'visi_misi_image' => '/images/img-2.jpg',
             'layanan_jasa_image' => '/images/img-3.jpg',
             'gambar_struktur_organisasi'=>null,
-            'alamat'=>null
+            'alamat'=>null,
+            'struktur_organisasi'=>'{ 
+                "class": "go.TreeModel",
+                "nodeDataArray": [
+                    {"key":1, "name":"Mahmudin,SE", "title":"CEO"},
+                    {"key":2, "name":"Lutfi", "title":"Programmer", "parent":1},
+                    {"key":3, "name":"Akmal", "title":"UI/UX Desain", "parent":1}
+                ]
+            }',
         ];
         return $setting;
     }
