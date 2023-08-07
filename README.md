@@ -30,9 +30,9 @@
   - [x] Konten Layanan & Jasa
   - [x] Konten Kontak
   - [ ] Pengaturan
+- [ ] Statistik di dashboard
 - Invoice
   - [x] Manajemen Customer
   - [x] Manajemen Invoice
 - Surat
-  - [ ] Manajemen Jenis Surat
-  - [ ] Manajemen Surat
+  - [x] Manajemen Surat
