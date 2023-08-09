@@ -26,6 +26,9 @@ class InvoicesDataTable extends DataTable
             ->editColumn('action', function ($data) {
                 return view('admin.invoice.action', compact('data'));
             })
+            ->editColumn('file-lampiran', function ($data) {
+                return view('admin.surat-inaportnet.file-lampiran', compact('data'));
+            })
             ->setRowId('id');
     }
 
@@ -76,11 +79,16 @@ class InvoicesDataTable extends DataTable
             Column::make('tanggal_invoice'),
             Column::make('customer.nama_customer'),
             Column::make('jumlah_invoice'),
+            Column::computed('file-lampiran')
+            ->exportable(false)
+            ->printable(false)
+            ->searchable(false),
             Column::computed('action')
-                  ->exportable(false)
-                  ->printable(false)
-                  ->width(60)
-                  ->addClass('text-center'),
+            ->searchable(false)
+            ->exportable(false)
+            ->printable(false)
+            ->width(60)
+            ->addClass('text-center'),
         ];
     }
 

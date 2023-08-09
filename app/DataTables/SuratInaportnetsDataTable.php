@@ -26,6 +26,9 @@ class SuratInaportnetsDataTable extends DataTable
             ->editColumn('action', function ($data) {
                 return view('admin.surat-inaportnet.action', compact('data'));
             })
+            ->editColumn('file-lampiran', function ($data) {
+                return view('admin.surat-inaportnet.file-lampiran', compact('data'));
+            })
             ->setRowId('id');
     }
 
@@ -77,7 +80,12 @@ class SuratInaportnetsDataTable extends DataTable
             Column::make('perihal_surat'),
             Column::make('tanggal_surat'),
             Column::make('kepada'),
+            Column::computed('file-lampiran')
+            ->exportable(false)
+            ->printable(false)
+            ->searchable(false),
             Column::computed('action')
+            ->searchable(false)
             ->exportable(false)
             ->printable(false)
             ->width(60)
