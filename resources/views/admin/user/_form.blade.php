@@ -36,16 +36,29 @@
                 </span>
             @enderror
         </div>
-        <div class="form-group">
-            <label for="username">Password <small class="text-danger">*</small></label>
-            <input class="form-control" placeholder="Passwrod..." type="password" name="password"
-                autocomplete="false" aria-autocomplete="false" required minlength="6" maxlength="50" />
-            @error('password')
-                <span class="text-xs text-danger">
-                    {{ $message }}
-                </span>
-            @enderror
-        </div>
+        @if (isset($user))
+            <div class="form-group">
+                <label for="password_baru">Password Baru (kosongkan jika tidak ingin merubah password) <small class="text-danger">*</small></label>
+                <input class="form-control" placeholder="Passwrod..." type="password" name="password_baru"
+                    autocomplete="off" aria-autocomplete="off" autocomplete="off" minlength="6" maxlength="50" />
+                @error('password_baru')
+                    <span class="text-xs text-danger">
+                        {{ $message }}
+                    </span>
+                @enderror
+            </div>
+        @else
+            <div class="form-group">
+                <label for="password">Password <small class="text-danger">*</small></label>
+                <input class="form-control" placeholder="Passwrod..." type="password" name="password"
+                    autocomplete="off" aria-autocomplete="off" autocomplete="off" required minlength="6" maxlength="50" />
+                @error('password')
+                    <span class="text-xs text-danger">
+                        {{ $message }}
+                    </span>
+                @enderror
+            </div>
+        @endif
         
     </div>
 

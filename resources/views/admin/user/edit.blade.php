@@ -33,8 +33,9 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('admin.user.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('admin.user.update',$user->id) }}" method="POST" enctype="multipart/form-data" autocomplete="off">
                         @csrf
+                        @method('PUT')
                         @include('admin.user._form')
                         <div class="form-group mt-4">
                             <button class="btn btn-primary btn-sm"><i class="fas fa-save"></i> Simpan</button>

@@ -52,7 +52,7 @@ class UserController extends Controller
         $request->validate([
             'nama' => 'required',
             'username' => 'required|min:5|max:20|unique:users,username,'.$id,
-            'password' => 'nullable|min:6|max:50',
+            'password_baru' => 'nullable|min:6|max:50',
             'role' => 'required'
         ]);
 
@@ -62,7 +62,7 @@ class UserController extends Controller
             $user->update([
                 'nama' => $request->nama,
                 'username' => $request->username,
-                'password' => $request->password ? bcrypt($request->password) : $user->password,
+                'password' => $request->password_baru ? bcrypt($request->password_baru) : $user->password,
                 'role' => $request->role
             ]);
             DB::commit();

@@ -33,7 +33,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('admin.user.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('admin.user.store') }}" method="POST" enctype="multipart/form-data" autocomplete="off">
                         @csrf
                         @include('admin.user._form')
                         <div class="form-group mt-4">
