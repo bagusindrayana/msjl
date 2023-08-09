@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('invoice_details', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('invoice_id')->index();
+            $table->unsignedBigInteger('invoice_id')->index();
             $table->text('deskripsi');
             $table->date('tanggal');
             $table->integer('jumlah',false)->default(0);
