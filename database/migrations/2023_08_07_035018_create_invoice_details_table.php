@@ -18,6 +18,8 @@ return new class extends Migration
             $table->date('tanggal');
             $table->integer('jumlah',false)->default(0);
             $table->timestamps();
+
+            $table->foreign('invoice_id')->references('id')->on('invoices')->onDelete('cascade');
         });
     }
 

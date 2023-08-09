@@ -39,6 +39,8 @@ return new class extends Migration
 
             $table->string('file_lampiran',150)->nullable();
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

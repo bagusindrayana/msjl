@@ -21,6 +21,8 @@ return new class extends Migration
             $table->text('keterangan_invoice')->nullable();
             $table->string('file_invoice')->nullable();
             $table->timestamps();
+
+            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
         });
     }
 
