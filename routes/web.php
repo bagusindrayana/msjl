@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BerkasController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\InvoiceController;
@@ -47,6 +48,7 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>['auth']],function(
     Route::resource('customer',CustomerController::class);
     Route::resource('invoice',InvoiceController::class);
     Route::resource('surat-inaportnet',SuratInaportnetController::class);
+    Route::resource('berkas',BerkasController::class);
     
 });
 

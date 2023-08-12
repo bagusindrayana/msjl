@@ -121,7 +121,9 @@
                         <li class="submenu-item @if (request()->routeIs('admin.surat-inaportnet.index')) active @endif">
                             <a href="{{ route('admin.surat-inaportnet.index') }}" class="submenu-link">Permohonan Inaportnet</a>
                         </li>
-
+                        <li class="submenu-item @if (request()->routeIs('admin.berkas.index')) active @endif">
+                            <a href="{{ route('admin.berkas.index') }}" class="submenu-link">Berkas Surat</a>
+                        </li>
                        
                     </ul>
                 </li>

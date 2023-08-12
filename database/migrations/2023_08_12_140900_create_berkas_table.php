@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('perihal',200);
             $table->date('tanggal_masuk');
             $table->text('keterangan')->nullable();
+            $table->string('file_berkas');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
