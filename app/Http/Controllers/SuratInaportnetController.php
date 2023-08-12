@@ -113,7 +113,7 @@ class SuratInaportnetController extends Controller
                 $originalName = $request->file('file_lampiran')->getClientOriginalName();
                 $ext = $request->file('file_lampiran')->getClientOriginalExtension();
                 $slugName = \Str::slug(str_replace($ext,'',$originalName),'-').'-'.time().'.'.$ext;
-                $file_lampiran = $request->file('file_lampiran')->storeAs('surat-inaportnet', $slugName,[
+                $file_lampiran = $request->file('file_lampiran')->storeAs('surat-inaportnet/'.\Str::slug($no,"-"), $slugName,[
                     'disk'=>'public'
                 ]);
             }
@@ -208,7 +208,7 @@ class SuratInaportnetController extends Controller
                 $originalName = $request->file('file_lampiran')->getClientOriginalName();
                 $ext = $request->file('file_lampiran')->getClientOriginalExtension();
                 $slugName = \Str::slug(str_replace($ext,'',$originalName),'-').'-'.time().'.'.$ext;
-                $file_lampiran = $request->file('file_lampiran')->storeAs('surat-inaportnet', $slugName,[
+                $file_lampiran = $request->file('file_lampiran')->storeAs('surat-inaportnet/'.\Str::slug($no,"-"), $slugName,[
                     'disk'=>'public'
                 ]);
             }
