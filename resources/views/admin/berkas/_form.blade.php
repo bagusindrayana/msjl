@@ -29,7 +29,7 @@
     <div class="col-md-6">
         <div class="form-group">
             <label for="perihal">Perihal <small class="text-danger">*</small></label>
-            <input class="form-control" placeholder="Perihal..." type="email" name="perihal"
+            <input class="form-control" placeholder="Perihal..." type="text" name="perihal"
                 value="{{ old('perihal', @$berkas->perihal) }}" minlength="1" maxlength="200" />
             @error('perihal')
                 <span class="text-xs text-danger">
