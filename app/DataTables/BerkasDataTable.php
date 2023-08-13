@@ -27,7 +27,7 @@ class BerkasDataTable extends DataTable
                 return view('admin.berkas.action', compact('data'));
             })
             ->editColumn('file-berkas', function ($data) {
-                return view('admin.surat-inaportnet.file-berkas', compact('data'));
+                return view('admin.berkas.file-berkas', compact('data'));
             })
             ->setRowId('id');
     }
