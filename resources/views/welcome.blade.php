@@ -100,7 +100,7 @@
                     aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
                 <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto pt-2 pt-lg-0">
-                        <li class="nav-item mx-1" data-anchor="data-anchor"><a class="nav-link fw-medium active"
+                        <li class="nav-item mx-1" data-anchor="data-anchor"><a class="nav-link fw-medium"
                                 aria-current="page" href="#home">Home</a></li>
                         <li class="nav-item mx-1" data-anchor="data-anchor"><a class="nav-link fw-medium"
                                 href="#profil">Profil</a></li>
