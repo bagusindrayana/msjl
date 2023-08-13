@@ -305,22 +305,19 @@
                             src="{{ url(SettingHelper::get('visi_misi_image')) }}" width="400" alt="" />
                     </div>
                     <div class="col-md-6 col-lg-6 px-sm-5 px-md-0 mt-2">
-                        <h6 class="fw-bold fs-4 display-3 lh-sm mb-6 text-center text-md-start pt-2">Visi & Misi</h6>
+                        <h6 class="fw-bold fs-4 display-3 lh-sm mb-4 text-center pt-2">Visi & Misi</h6>
 
                         <div class="d-flex align-items-center mb-5">
-                            <div><img class="img-fluid"
-                                    src="{{ url('assets/img/illustrations/fast-performance.png') }}" width="150"
-                                    alt="" /></div>
+                            
                             <div class="px-4">
-                                <h5 class="fw-bold text-danger">Visi</h5>
+                                <h5 class="fw-bold">Visi</h5>
                                 <p>{{ SettingHelper::get('visi') }}</p>
                             </div>
                         </div>
                         <div class="d-flex align-items-center mb-5">
-                            <div><img class="img-fluid" src="{{ url('assets/img/illustrations/prototype.png') }}"
-                                    width="150" alt="" /></div>
+                            
                             <div class="px-4">
-                                <h5 class="fw-bold text-primary">Misi</h5>
+                                <h5 class="fw-bold ">Misi</h5>
                                 <p>{{ SettingHelper::get('misi') }}</p>
                             </div>
                         </div>
