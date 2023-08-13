@@ -52,6 +52,7 @@ class BerkasDataTable extends DataTable
                     //->dom('Bfrtip')
                     ->orderBy(1)
                     ->selectStyleSingle()
+                    ->select(false)
                     ->buttons([
                         // Button::make('excel'),
                         // Button::make('csv'),
