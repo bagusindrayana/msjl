@@ -73,10 +73,10 @@
                         <h4 class="card-title">Data Layanan</h4>
 
                         <div class="card-header-action">
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            {{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                 data-bs-target="#gambarLayanan">
                                 <i class="fas fa-image"></i> Gambar Layanan
-                            </button>
+                            </button> --}}
                             <a href="{{ route('admin.layanan.create') }}" class="btn btn-primary"><i
                                     class="fas fa-plus"></i> Tambah Layanan</a>
                         </div>

@@ -66,7 +66,7 @@
                 <li class="sidebar-item has-sub @if (request()->routeIs('admin.konten.*') || request()->routeIs('admin.layanan.*') || request()->routeIs('admin.kontak.*')) active @endif">
                     <a href="#" class="sidebar-link @if (request()->routeIs('admin.konten.*') || request()->routeIs('admin.layanan.*') || request()->routeIs('admin.kontak.*')) active @endif">
                         <i class="bi bi-stack"></i>
-                        <span>Konten Web</span>
+                        <span>Company Profile</span>
                     </a>
 
                     <ul class="submenu">

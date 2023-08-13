@@ -51,29 +51,45 @@
             object-position: center;
         }
 
-        .navbar-light,.bg-1000 {
+        .navbar-light,.bg-1000,.btn-primary {
             background-color: #2B3467 !important;
         }
 
         .nav-link,.brand-title {
-            color:#efdfe6;
+            color:#F1F1F1;
         }
 
         .navbar-light .navbar-toggler {
-            color: #efdfe6 !important;
+            color: #F1F1F1 !important;
             border-color: rgba(0, 0, 0, 0.1);
         }
 
         .navbar-light .navbar-nav .nav-link {
-            color:#efdfe6;
+            color:#F1F1F1;
         }
 
         .navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .nav-link.active {
             color: #ffffff;
         }
 
-        #layanan,#struktur {
-            background-color: #f1e7e7;
+        #profil,#visi-misi,#kontak {
+            background-color: #F2F4F7;
+        }
+
+        .layanan-card {
+            background-color: #00B88C;
+            border-radius: 30px;
+            border: none;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+        }
+
+        .layanan-card .card-title {
+            color: #ffffff;
+        }
+
+        .layanan-card .card-text {
+            color: #ffffff;
         }
     </style>
 
@@ -202,17 +218,17 @@
             <div class="container">
                 <div class="container">
                     <div class="row align-items-center">
-                        <div class="col-md-6 order-md-1 text-end text-md-end">
+                        {{-- <div class="col-md-6 order-md-1 text-end text-md-end">
                             <img class="img-fluid rounded mb-4"
                                 src="{{ url(SettingHelper::get('layanan_jasa_image')) }}" width="400"
                                 alt="" />
-                        </div>
-                        <div class="col-md-6 text-center text-md-start">
+                        </div> --}}
+                        <div class="col-md-12 text-center">
                             <h6 class="fw-bold fs-4 display-3 lh-sm">Layanan & Jasa</h6>
                             <p class="my-4 pe-xl-5"> Kami berkomitmen memberikan pelayanan dan jasa berkualitas.</p>
                             <div class="row">
                                 @foreach ($layanans as $layanan)
-                                    <div class="col-md-6">
+                                    {{-- <div class="col-md-4">
                                         <div class="mb-4">
                                             <div class="py-4"><img class="img-fluid"
                                                     src="{{ url($layanan->gambar_layanan) }}"
@@ -221,13 +237,27 @@
                                             <h5 class="fw-bold text-undefined">{{ $layanan->nama_layanan }}</h5>
                                             <p class="mt-2 mb-0">{{ $layanan->deskripsi_layanan }}</p>
                                         </div>
+                                    </div> --}}
+                                    <div class="col-md-4">
+                                        <div class="card m-auto layanan-card" style="width: 18rem;">
+                                            <div class="card-body">
+                                              <h5 class="card-title">{{ $layanan->nama_layanan }}</h5>
+                                              <div class="py-4"><img class="img-fluid m-auto"
+                                                src="{{ url($layanan->gambar_layanan) }}"
+                                                style="width: 90px; height: 90px;display: block;"
+                                                alt="" /></div>
+                                              <p class="card-text">{{ $layanan->deskripsi_layanan }}</p>
+                                      
+                                            </div>
+                                          </div>
                                     </div>
+                                   
                                 @endforeach
 
 
                             </div>
-                            <a class="btn btn-lg btn-primary rounded-pill hover-top" href="#"
-                                role="button">See all</a>
+                            {{-- <a class="btn btn-lg btn-primary rounded-pill hover-top" href="#"
+                                role="button">See all</a> --}}
                         </div>
                     </div>
                 </div>
