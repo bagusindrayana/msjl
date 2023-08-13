@@ -77,7 +77,7 @@
         }
 
         .layanan-card {
-            background-color: #00B88C;
+            background-color: #2B3467;
             border-radius: 30px;
             border: none;
             box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -238,14 +238,15 @@
                                             <p class="mt-2 mb-0">{{ $layanan->deskripsi_layanan }}</p>
                                         </div>
                                     </div> --}}
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 my-4">
                                         <div class="card m-auto layanan-card" style="width: 18rem;">
                                             <div class="card-body my-4">
+                                                <div class="py-4"><img class="img-fluid m-auto"
+                                                    src="{{ url($layanan->gambar_layanan) }}"
+                                                    style="width: 90px; height: 90px;display: block;"
+                                                    alt="" /></div>
                                               <h5 class="card-title">{{ $layanan->nama_layanan }}</h5>
-                                              <div class="py-4"><img class="img-fluid m-auto"
-                                                src="{{ url($layanan->gambar_layanan) }}"
-                                                style="width: 90px; height: 90px;display: block;"
-                                                alt="" /></div>
+                                              
                                               <p class="card-text">{{ $layanan->deskripsi_layanan }}</p>
                                       
                                             </div>
