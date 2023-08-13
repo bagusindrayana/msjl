@@ -3,7 +3,7 @@
 
         <div class="form-group">
             <label for="nomor_berkas">Nomor Berkas/Surat <small class="text-danger">*</small></label>
-            <input class="form-control" placeholder="Nama Customer..." type="text" name="nomor_berkas"
+            <input class="form-control" placeholder="Nomor..." type="text" name="nomor_berkas"
                 value="{{ old('nomor_berkas', @$berkas->nomor_berkas) }}" required minlength="1" maxlength="100" />
             @error('nomor_berkas')
                 <span class="text-xs text-danger">
