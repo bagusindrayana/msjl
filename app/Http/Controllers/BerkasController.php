@@ -75,8 +75,9 @@ class BerkasController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Berkas $berkas)
-    {
+    public function edit($id)
+    {   
+        $berkas = Berkas::findOrFail($id);
         return view('admin.berkas.edit', compact('berkas'));
     }
 
@@ -126,10 +127,11 @@ class BerkasController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Berkas $berkas)
+    public function destroy($id)
     {
         DB::beginTransaction();
         try {
+            $berkas = Berkas::findOrFail($id);
             $berkas->delete();
             DB::commit();
             return redirect()->route('admin.berkas.index')->with('success', 'Berkas berhasil dihapus');

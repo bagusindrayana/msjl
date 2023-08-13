@@ -92,7 +92,7 @@
                             </td>
                             <td>
                                 <input type="date" name="periode_detail[{{ $index }}]"
-                                    value="{{ $item->tangggal }}" required class="form-control" placeholder="Periode">
+                                    value="{{ $item->tanggal }}" required class="form-control" placeholder="Periode">
                             </td>
                             <td>
                                 <input type="number" name="jumlah_detail[{{ $index }}]"
