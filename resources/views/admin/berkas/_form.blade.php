@@ -69,7 +69,7 @@
             <label for="file_berkas">File Berkas (PDF/IMG) maksimal 10MB <small class="text-danger">*</small></label>
             <input class="form-control" placeholder="File..." type="file" name="file_berkas" required accept="application/pdf,image/*"/>
             @if (@$berkas->file_berkas != null)
-                <a href="{{ url($data->file_berkas) }}" target="_blank" class="btn btn-info btn-sm m-1"
+                <a href="{{ url($berkas->file_berkas) }}" target="_blank" class="btn btn-info btn-sm m-1"
                     aria-label="File Berkas">
                     <i class="fas fa-file"></i>
                 </a>
