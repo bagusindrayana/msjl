@@ -29,7 +29,7 @@
     <!--    Stylesheets-->
     <!-- ===============================================-->
     <link href="{{ url('assets/css/theme.css') }}" rel="stylesheet" />
-
+    <link rel="stylesheet" href="{{ url('/mazer/extensions/@fortawesome/fontawesome-free/css/all.min.css') }}" />
     <style>
         .logo-brand {
             width: 75px;
@@ -50,7 +50,33 @@
             object-fit: cover;
             object-position: center;
         }
+
+        .navbar-light,.bg-1000 {
+            background-color: #2B3467 !important;
+        }
+
+        .nav-link,.brand-title {
+            color:#efdfe6;
+        }
+
+        .navbar-light .navbar-toggler {
+            color: #efdfe6 !important;
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-light .navbar-nav .nav-link {
+            color:#efdfe6;
+        }
+
+        .navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .nav-link.active {
+            color: #ffffff;
+        }
+
+        #layanan,#struktur {
+            background-color: #f1e7e7;
+        }
     </style>
+
 
 </head>
 
@@ -61,7 +87,7 @@
     <!--    Main Content-->
     <!-- ===============================================-->
     <main class="main" id="top">
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" data-navbar-on-scroll="data-navbar-on-scroll">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" >
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center fw-bold fs-2" href="index.html">
                     <img src="{{ url(SettingHelper::get('app_logo')) }}" alt="" class="logo-brand">
@@ -71,8 +97,7 @@
                 </a>
                 <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation"><span
-                        class="navbar-toggler-icon"></span></button>
+                    aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
                 <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto pt-2 pt-lg-0">
                         <li class="nav-item mx-1" data-anchor="data-anchor"><a class="nav-link fw-medium active"
@@ -178,8 +203,8 @@
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-md-6 order-md-1 text-end text-md-end">
-                            <img class="img-fluid rounded mb-4 ms-4"
-                                src="{{ url(SettingHelper::get('layanan_jasa_image')) }}" width="550"
+                            <img class="img-fluid rounded mb-4"
+                                src="{{ url(SettingHelper::get('layanan_jasa_image')) }}" width="400"
                                 alt="" />
                         </div>
                         <div class="col-md-6 text-center text-md-start">
@@ -247,7 +272,7 @@
             <div class="container-lg">
                 <div class="row align-items-center">
                     <div class="col-md-6 col-lg-6 order-md-0 text-center text-md-start"><img class="img-fluid rounded"
-                            src="{{ url(SettingHelper::get('visi_misi_image')) }}" width="550" alt="" />
+                            src="{{ url(SettingHelper::get('visi_misi_image')) }}" width="400" alt="" />
                     </div>
                     <div class="col-md-6 col-lg-6 px-sm-5 px-md-0">
                         <h6 class="fw-bold fs-4 display-3 lh-sm mb-6">Visi & Misi</h6>
@@ -489,7 +514,7 @@
                         $(go.Panel, "Horizontal", {
                                 margin: 8
                             },
-                            
+
                             $(go.Panel, "Table",
                                 $(go.TextBlock, {
                                         row: 0,
@@ -507,11 +532,11 @@
                                     },
                                     new go.Binding("text", "title")
                                 ),
-                                
+
                             )
                         ),
-             
-                      
+
+
                     )
                 );
 
@@ -531,14 +556,14 @@
             var nodeDataArray = [];
             var modelJson = {!! SettingHelper::get('struktur_organisasi') !!};
             var defaultModel = new go.TreeModel({
-                    nodeParentKeyProperty: "boss", // this property refers to the parent node data
-                    nodeDataArray: nodeDataArray
-                });
+                nodeParentKeyProperty: "boss", // this property refers to the parent node data
+                nodeDataArray: nodeDataArray
+            });
 
             // create the Model with data for the tree, and assign to the Diagram
-            myDiagram.model = (modelJson != null) ?  go.Model.fromJson(modelJson) : defaultModel;
+            myDiagram.model = (modelJson != null) ? go.Model.fromJson(modelJson) : defaultModel;
 
-        
+
         }
 
         // the Search functionality highlights all of the nodes that have at least one data property match a RegExp
