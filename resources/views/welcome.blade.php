@@ -301,15 +301,15 @@
         <section class="py-5 mb-4" id="visi-misi">
             <div class="container-lg">
                 <div class="row align-items-center">
-                    <div class="col-md-6 col-lg-6 order-md-0 text-center text-md-start"><img class="img-fluid rounded"
+                    <div class="col-md-6 col-lg-6 order-md-0 text-center text-md-start mt-2"><img class="img-fluid rounded"
                             src="{{ url(SettingHelper::get('visi_misi_image')) }}" width="400" alt="" />
                     </div>
-                    <div class="col-md-6 col-lg-6 px-sm-5 px-md-0">
-                        <h6 class="fw-bold fs-4 display-3 lh-sm mb-6">Visi & Misi</h6>
+                    <div class="col-md-6 col-lg-6 px-sm-5 px-md-0 mt-2">
+                        <h6 class="fw-bold fs-4 display-3 lh-sm mb-6 text-center text-md-start pt-2">Visi & Misi</h6>
 
                         <div class="d-flex align-items-center mb-5">
                             <div><img class="img-fluid"
-                                    src="{{ url('assets/img/illustrations/fast-performance.png') }}" width="90"
+                                    src="{{ url('assets/img/illustrations/fast-performance.png') }}" width="150"
                                     alt="" /></div>
                             <div class="px-4">
                                 <h5 class="fw-bold text-danger">Visi</h5>
@@ -318,7 +318,7 @@
                         </div>
                         <div class="d-flex align-items-center mb-5">
                             <div><img class="img-fluid" src="{{ url('assets/img/illustrations/prototype.png') }}"
-                                    width="90" alt="" /></div>
+                                    width="150" alt="" /></div>
                             <div class="px-4">
                                 <h5 class="fw-bold text-primary">Misi</h5>
                                 <p>{{ SettingHelper::get('misi') }}</p>
