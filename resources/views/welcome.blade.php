@@ -240,7 +240,7 @@
                                     </div> --}}
                                     <div class="col-md-4">
                                         <div class="card m-auto layanan-card" style="width: 18rem;">
-                                            <div class="card-body">
+                                            <div class="card-body my-4">
                                               <h5 class="card-title">{{ $layanan->nama_layanan }}</h5>
                                               <div class="py-4"><img class="img-fluid m-auto"
                                                 src="{{ url($layanan->gambar_layanan) }}"
