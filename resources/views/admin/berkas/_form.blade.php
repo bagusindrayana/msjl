@@ -73,7 +73,7 @@
                     aria-label="File Berkas">
                     <i class="fas fa-file"></i>
                 </a>
-            @else
+            @endif
             @error('file_berkas')
                 <span class="text-xs text-danger">
                     {{ $message }}
