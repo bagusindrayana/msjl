@@ -43,9 +43,7 @@ class BerkasController extends Controller
             $originalName = $request->file('file_berkas')->getClientOriginalName();
             $ext = $request->file('file_berkas')->getClientOriginalExtension();
             $slugName = \Str::slug(str_replace($ext,'',$originalName),'-').'-'.time().'.'.$ext;
-            $file_berkas = $request->file_berkas->storeAs('berkas/'.\Str::slug($request->nomor_berkas,$slugName, '-'),[
-                'disk'=>'public'
-            ]);
+            $file_berkas = $request->file_berkas->storeAs('berkas/'.\Str::slug($request->nomor_berkas, '-'),$slugName,'public');
             $berkas = Berkas::create([
                 'user_id' => auth()->user()->id,
                 'nomor_berkas' => $request->nomor_berkas,
@@ -84,8 +82,8 @@ class BerkasController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Berkas $berkas)
-    {
+    public function update(Request $request, $id)
+    {   
         $request->validate([
             'nomor_berkas' => 'required',
             'asal_berkas' => 'required',
@@ -96,6 +94,7 @@ class BerkasController extends Controller
 
         DB::beginTransaction();
         try {
+            $berkas = Berkas::findOrFail($id);
             $berkas->update([
                 'user_id' => auth()->user()->id,
                 'nomor_berkas' => $request->nomor_berkas,
@@ -108,9 +107,7 @@ class BerkasController extends Controller
                 $originalName = $request->file('file_berkas')->getClientOriginalName();
                 $ext = $request->file('file_berkas')->getClientOriginalExtension();
                 $slugName = \Str::slug(str_replace($ext,'',$originalName),'-').'-'.time().'.'.$ext;
-                $file_berkas = $request->file_berkas->storeAs('berkas/'.\Str::slug($request->nomor_berkas,$slugName, '-'),[
-                    'disk'=>'public'
-                ]);
+                $file_berkas = $request->file_berkas->storeAs('berkas/'.\Str::slug($request->nomor_berkas, '-'),$slugName,'public');
                 $berkas->update([
                     'file_berkas' => $file_berkas
                 ]);
