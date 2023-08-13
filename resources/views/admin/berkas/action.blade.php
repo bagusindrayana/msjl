@@ -1,10 +1,10 @@
 <div class="d-flex">
-    <a href="{{ route('admin.customer.edit', $data->id) }}"
+    <a href="{{ route('admin.berkas.edit', $data->id) }}"
         class="btn btn-warning btn-sm m-1"
         aria-label="Edit">
         <i class="fas fa-edit"></i>
     </a>
-    <form action="{{ route('admin.customer.destroy', $data->id) }}" method="POST">
+    <form action="{{ route('admin.berkas.destroy', $data->id) }}" method="POST">
         @method('DELETE')
         @csrf
         <button
