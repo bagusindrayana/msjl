@@ -56,11 +56,11 @@ class BerkasController extends Controller
                 'file_berkas' => $file_berkas
             ]);
             DB::commit();
-            return redirect()->route('berkas.index')->with('success', 'Berkas berhasil ditambahkan');
+            return redirect()->route('admin.berkas.index')->with('success', 'Berkas berhasil ditambahkan');
         } catch (\Throwable $th) {
             //throw $th;
             DB::rollback();
-            return redirect()->back()->withInput($request->all())->with('error', 'Berkas gagal ditambahkan');
+            return redirect()->back()->withInput($request->all())->with('error', 'Berkas gagal ditambahkan : '.$th->getMessage());
         }
     }
 
@@ -115,7 +115,7 @@ class BerkasController extends Controller
                 ]);
             }
             DB::commit();
-            return redirect()->route('berkas.index')->with('success', 'Berkas berhasil diubah');
+            return redirect()->route('admin.berkas.index')->with('success', 'Berkas berhasil diubah');
         } catch (\Throwable $th) {
             //throw $th;
             DB::rollback();
@@ -132,7 +132,7 @@ class BerkasController extends Controller
         try {
             $berkas->delete();
             DB::commit();
-            return redirect()->route('berkas.index')->with('success', 'Berkas berhasil dihapus');
+            return redirect()->route('admin.berkas.index')->with('success', 'Berkas berhasil dihapus');
         } catch (\Throwable $th) {
             //throw $th;
             DB::rollback();
